@@ -33,8 +33,8 @@ class YukiBungeeStats : Plugin(), Listener {
     @EventHandler
     fun onPingForStats(e: ProxyPingEvent) {
         val sample = arrayOf(
-            "Ping数: ${pings.size} (${pings.values.sum()})",
-            "接続数: ${connects.size} (${connects.values.sum()})"
+            "Ping数: ${pings.size} IP (${pings.values.sum()} 回)",
+            "接続数: ${connects.size} 人 (${connects.values.sum()} 回)"
         ).map { ServerPing.PlayerInfo(it, UUID.randomUUID()) }.toTypedArray()
         e.response.players.sample = sample
     }
